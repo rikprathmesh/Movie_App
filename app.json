@@ -50,6 +50,18 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": "https://movieappapi-nine.vercel.app",
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "projectId": "464ee2e4-6955-4839-9d15-649ded2e206f"
+      }
+    },
+    "owner": "prathmesh1207"
   }
 }
