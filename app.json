@@ -27,7 +27,7 @@
       [
         "expo-router",
         {
-          "origin": "https://REPLACE-WITH-YOUR-APP.vercel.app"
+          "origin": "https://movieappapi-nine.vercel.app"
         }
       ],
       [
