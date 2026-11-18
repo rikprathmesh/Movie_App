@@ -44,3 +44,6 @@ example
 
 # local env files (contain API keys and the database password)
 .env
+
+# Vercel CLI project link
+.vercel

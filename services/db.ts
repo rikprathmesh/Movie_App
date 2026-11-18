@@ -3,7 +3,15 @@
 // it holds the database password.
 import { Pool } from "pg";
 
-const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+// Cloud databases (Neon, RDS, ...) require encrypted connections; the local
+// PostgreSQL on your laptop doesn't support them. So SSL is on for everything
+// except localhost.
+const isLocalDatabase = /@(localhost|127\.0\.0\.1)[:/]/.test(process.env.DATABASE_URL ?? "");
+
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: isLocalDatabase ? false : { rejectUnauthorized: true },
+});
 
 // Create the tables the first time an API route runs (safe to run every time)
 let tablesReady: Promise<unknown> | null = null;

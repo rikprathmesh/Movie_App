@@ -24,7 +24,12 @@
       "favicon": "./assets/images/logo.png"
     },
     "plugins": [
-      "expo-router",
+      [
+        "expo-router",
+        {
+          "origin": "https://REPLACE-WITH-YOUR-APP.vercel.app"
+        }
+      ],
       [
         "expo-splash-screen",
         {
